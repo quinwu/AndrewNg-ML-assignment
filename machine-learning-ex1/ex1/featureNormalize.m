@@ -26,21 +26,21 @@ sigma = zeros(1, size(X, 2));
 % Hint: You might find the 'mean' and 'std' functions useful.
 %       
 % 
-mu = mean(X);
-sigma = std(X);
-m = size(X,1);%sample numbers
-n = size(X,2);%features numbers
+mu = mean(X); % mean value
+sigma = std(X); % stand deviations
+m = size(X,1); % sample numbers
+n = size(X,2); % features numbers
 
 for i = 1 : m
     for j = 1 : n
-        X_norm(i,j) = (X(i,j) - mu(j))/std(j);
+        X_norm(i,j) = (X(i,j) - mu(j))/sigma(j);
     end
 end
 
 % samples = size(X,1);
 % features = size(X,2);
 % for i = 1 : features
-%   mu(i) = mean(X(:,i));
+%   mu(i) = mean(X(:,i)); 
 %   sigma(i) = std(X(:,i));
 %   X_norm(:,i) = (X(:,i) - mu(i)) / sigma(i);
 % end

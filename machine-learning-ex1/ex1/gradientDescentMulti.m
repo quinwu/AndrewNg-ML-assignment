@@ -28,13 +28,8 @@ n = size(X,2); % dataset feature numbers
 %     %Z2 = X(:,2)' * (X* theta - y);
 %     theta2 = alpha * sum(Z2(:,1)) / m;
     
-    Z = X' * (X*theta - y) * alpha / m;
+    Z = X' * (X * theta - y) * alpha / m;
     theta = theta - Z; %update theta
-
-
-
-
-
 
 
 

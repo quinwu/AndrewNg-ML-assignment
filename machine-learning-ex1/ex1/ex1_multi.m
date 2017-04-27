@@ -107,6 +107,15 @@ fprintf('\n');
 price = 0; % You should change this
 
 
+predict_X = [1650,3];
+
+% normalized data 
+predict_X = ( predict_X - mu ) ./ sigma;
+
+predict_X = [ones(1,1) predict_X];
+
+price = predict_X * theta;
+
 % ============================================================
 
 fprintf(['Predicted price of a 1650 sq-ft, 3 br house ' ...
@@ -150,6 +159,12 @@ fprintf('\n');
 % Estimate the price of a 1650 sq-ft, 3 br house
 % ====================== YOUR CODE HERE ======================
 price = 0; % You should change this
+
+predict_X = [1650,3];
+
+predict_X = [ones(1,1) predict_X]; % remain origin data
+
+price = predict_X * theta;
 
 
 % ============================================================

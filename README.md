@@ -1,4 +1,4 @@
-# AndrewNg-ML-exercise
+# AndrewNg-ML-assignment
 Andrew Ng Machine learning programming assignment (Coursera) by Quin Wu
 
 

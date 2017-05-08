@@ -23,9 +23,27 @@ p = zeros(size(X, 1), 1);
 
 
 
+% Z2 = Theta1*a1; % (25*401)*?401*1?= 25 * 1
+% 
+% a2 = sigmoid(Z2); % 25*1
+% 
+% a2 = [1;a2];% 26*1
+% 
+% Z3 = Theta2*a2; % ?10*26? * ?26*1? = 10 * 1
+% 
+% p = sigmoid(Z3);% 10 * 1
 
 
+X = [ones(m,1) X];
 
+prob1 = sigmoid(X * Theta1');
+
+prob1 = [ones(m,1) prob1];
+
+prob2 = sigmoid(prob1 * Theta2' );
+
+[z,p] = max (prob2,[],2);
+    
 
 
 

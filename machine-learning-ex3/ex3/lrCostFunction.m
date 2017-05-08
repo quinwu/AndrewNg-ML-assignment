@@ -36,13 +36,30 @@ grad = zeros(size(theta));
 %           grad = grad + YOUR_CODE_HERE (using the temp variable)
 %
 
-Z = X*theta;
-J = -y' * log( sigmoid(Z)) - (1 - y)' * log(1 - sigmoid(Z));
-J = sum(J) / m + lambda / 2/ m * (theta' * theta - theta(1) * theta(1)); 
 
+% m: number of training examples 
+% n: number of training set features
+% X:m*n  theta:n*1  Z:m*1  
+Z = X*theta;
+
+% sigmoid(z): m*1  y:m*1 y':1*m  -y'*log( sigmoid(Z)):1*1 
+% J:1*1 a value
+J = -y' * log( sigmoid(Z)) - (1 - y)' * log(1 - sigmoid(Z));
+
+% %theta:n*1 theta':1*n theta'*theta:1*1 
+J = J / m + lambda / 2/ m * (theta' * theta - theta(1) * theta(1)); 
+
+
+%sigmoid(Z):m*1   y:m*1 beta m*1
 beta = sigmoid(Z) - y;
+
+%X':n*m  X'*beta: n*1
 grad = 1 / m * X' * beta + lambda / m * theta;
 grad(1) = grad(1) - lambda / m * theta(1);
+
+% a training set has n features, so grad has n*1
+
+
 
 
 

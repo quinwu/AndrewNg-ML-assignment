@@ -8,7 +8,7 @@ function [all_theta] = oneVsAll(X, y, num_labels, lambda)
 %   to the classifier for label i
 
 % Some useful variables
-m = size(X, 1);
+m = size(X, 1); 
 n = size(X, 2);
 
 % You need to return the following variables correctly 
@@ -49,6 +49,9 @@ X = [ones(m, 1) X];
 %                 initial_theta, options);
 %
 
+
+% m number of training set.
+% n number of training data features.
 
 initial_theta = zeros(n + 1 ,1 );
 

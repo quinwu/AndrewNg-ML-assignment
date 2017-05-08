@@ -33,17 +33,28 @@ p = zeros(size(X, 1), 1);
 % 
 % p = sigmoid(Z3);% 10 * 1
 
+a1 = [ones(m,1) X];
+Z2 = a1*Theta1';
+a2 = sigmoid(Z2);
+a2 = [ones(m,1) a2];
+Z3 = a2*Theta2';
+a3 = sigmoid(Z3);
+[z,p] = max(a3,[],2);
 
-X = [ones(m,1) X];
 
-prob1 = sigmoid(X * Theta1');
-
-prob1 = [ones(m,1) prob1];
-
-prob2 = sigmoid(prob1 * Theta2' );
-
-[z,p] = max (prob2,[],2);
-    
+% % X?m*(n+1) m*401
+% X = [ones(m,1) X];
+% %Theta1: 25*401 prob1:m * 25
+% prob1 = sigmoid(X * Theta1');
+% 
+% %prob1 m*26
+% prob1 = [ones(m,1) prob1];
+% 
+% %Theta2:10*26
+% prob2 = sigmoid(prob1 * Theta2' );
+% %prob2 m*10
+% [z,p] = max (prob2,[],2);
+%     
 
 
 

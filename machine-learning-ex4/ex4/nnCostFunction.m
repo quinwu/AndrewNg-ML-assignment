@@ -63,10 +63,10 @@ Theta2_grad = zeros(size(Theta2));
 %
 
 % cost function without regularization
-% a1=(m*401) Theta1=(25*401) Z2=(m*25)
-
+% a1=(m*401) Theta1=(25*401) Z2=(m*25) a2=(m*26) Theta2=(10*26) Z3=h=(m*10)
+% Y=(m*10)
 a1 = [ones(m,1) X];
-Z2 = a1 * Theta1' ;
+Z2 = a1 * Theta1';
 a2 = sigmoid(Z2);
 a2 = [ones(m,1) a2];
 Z3 = a2 * Theta2' ;
@@ -82,23 +82,17 @@ J = 1/m *( -Y *log(h)' - (1 - Y) * log(1 - h)');
 J = trace(J);
 
 % cost function Regularization
+% t1=(25*400) t2=(10*25)
+t1 = Theta1(:,2:end);
+t2 = Theta2(:,2:end);
 
-t_1 = Theta1(:,2:end);
-t_2 = Theta2(:,2:end);
-
-allparams = [t_1(:); t_2(:)];
+allparams = [t1(:); t2(:)];
 
 J = J + lambda/(2*m) * (allparams'*allparams);
 
-
-% BP 
-% % h=(m*10)
-% % Y=(m*10)
-% % delta_3=(m*10)
+% backpropagation
+%h=(m*10) Y=(m*10) delta_3=(m*10) Theta2=(10*26) delta_2=(m*26)->(m*25)
 delta_3 = (h - Y);
-% Theta2 = (10*26)
-% sigmoidGrad(Z2)=(m*25)
-%delta_2 = delta_3 * Theta2 .* sigmoidGradient(Z2);
 delta_2 = delta_3 * Theta2 .* a2 .*(1 - a2);
 delta_2 = delta_2(:,2:end);
 
@@ -106,11 +100,10 @@ Theta1_grad = delta_2' * a1 / m;
 Theta2_grad = delta_3' * a2 / m;
 
 % Regularized Neural Networks
-t_1 = [zeros(hidden_layer_size,1) t_1];
-t_2 = [zeros(num_labels,1) t_2];
-
-Theta1_grad = Theta1_grad + t_1 * lambda /m;
-Theta2_grad = Theta2_grad + t_2 * lambda /m;
+t1 = [zeros(hidden_layer_size,1) t1];
+t2 = [zeros(num_labels,1) t2];
+Theta1_grad = Theta1_grad + t1 * lambda /m;
+Theta2_grad = Theta2_grad + t2 * lambda /m;
 
 
 % =========================================================================

@@ -62,16 +62,31 @@ Theta2_grad = zeros(size(Theta2));
 %               and Theta2_grad from Part 2.
 %
 
+% cost function without regularization
+a1 = [ones(m,1) X];
+Z2 = a1 * Theta1' ;
+a2 = sigmoid(Z2);
+a2 = [ones(m,1) a2];
+Z3 = a2 * Theta2' ;
+h = sigmoid(Z3);
 
+Y = zeros(m,num_labels);
 
+for i = 1 : m
+    Y(i,y(i)) = 1;
+end
 
+J = 1/m *( -Y *log(h)' - (1 - Y) * log(1 - h)');
+J = trace(J);
 
+% cost function Regularization
 
+t_1 = Theta1(:,2:end);
+t_2 = Theta2(:,2:end);
 
+allparams = [t_1(:); t_2(:)];
 
-
-
-
+J = J + lambda/(2*m) * (allparams'*allparams);
 
 
 

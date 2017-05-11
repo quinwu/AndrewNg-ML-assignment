@@ -63,6 +63,8 @@ Theta2_grad = zeros(size(Theta2));
 %
 
 % cost function without regularization
+% a1=(m*401) Theta1=(25*401) Z2=(m*25)
+
 a1 = [ones(m,1) X];
 Z2 = a1 * Theta1' ;
 a2 = sigmoid(Z2);
@@ -89,13 +91,27 @@ allparams = [t_1(:); t_2(:)];
 J = J + lambda/(2*m) * (allparams'*allparams);
 
 
+% BP 
+% % h=(m*10)
+% % Y=(m*10)
+% % delta_3=(m*10)
+delta_3 = (h - Y);
+% Theta2 = (10*26)
+% sigmoidGrad(Z2)=(m*25)
+%delta_2 = delta_3 * Theta2 .* sigmoidGradient(Z2);
+delta_2 = delta_3 * Theta2 .* a2 .*(1 - a2);
+delta_2 = delta_2(:,2:end);
 
+Theta1_grad = delta_2' * a1 / m;
+Theta2_grad = delta_3' * a2 / m;
 
+% Regularized Neural Networks
+t_1 = [zeros(hidden_layer_size,1) t_1];
+t_2 = [zeros(num_labels,1) t_2];
 
+Theta1_grad = Theta1_grad + t_1 * lambda /m;
+Theta2_grad = Theta2_grad + t_2 * lambda /m;
 
-
-
-% -------------------------------------------------------------
 
 % =========================================================================
 

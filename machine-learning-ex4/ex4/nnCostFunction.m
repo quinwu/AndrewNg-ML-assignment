@@ -78,8 +78,13 @@ for i = 1 : m
     Y(i,y(i)) = 1;
 end
 
-J = 1/m *( -Y *log(h)' - (1 - Y) * log(1 - h)');
-J = trace(J);
+
+% J = 1/m *( -Y *log(h)' - (1 - Y) * log(1 - h)');
+% J = trace(J);
+
+for i = 1 :m
+    J = J + 1/m * (-Y(i,:)*log(h(i,:))' - (1 - Y(i,:))* log(1 - h(i,:))');
+end
 
 % cost function Regularization
 % t1=(25*400) t2=(10*25)

@@ -251,7 +251,7 @@ $\delta^{(l)}_j$ 表示第$l$层第$j$个节点的误差。为了求出偏导项
 
 
 $$
-\begin{align}
+\begin{split}
 \delta_i^{(4)} & = \frac{\partial}{\partial z\_i^{(4)}}J(\Theta) \\\\
  \\\\& = \frac{\partial J(\Theta)}{\partial a\_i^{(4)}}\frac{\partial a\_i^{(4)}}{\partial z\_i^{(4)}} \\\\
  \\\\& = -\frac{\partial}{\partial a\_i^{(4)}}\sum\_{k=1}^K\left[y\_kloga\_k^{(4)}+(1-y\_k)log(1-a_k^{(4)})\right]g’(z\_i^{(4)})  \\\\ 
@@ -259,7 +259,7 @@ $$
 \\\\ & = \left(\frac{1-y\_i}{1-a\_i^{(4)}}-\frac{y\_i}{a\_i^{(4)}}\right)a\_i^{(4)}(1-a\_i^{(4)}) \\\\ 
 \\\\ & = (1-y\_i)a\_i^{(4)} - y\_i(1-a\_i^{(4)}) \\\\ 
 \\\\ & = a\_i^{(4)} - y\_i \\\\ 
-\end{align}
+\end{split}
 $$
 
 $$

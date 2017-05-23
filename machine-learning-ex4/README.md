@@ -1,6 +1,6 @@
 ### 说明
 
-你的浏览器可能会显示Latex为乱码，这是由于Github Markdown不支持导致的。您选择可以下载[description.pdf](https://github.com/quinwu/AndrewNg-ML-assignment/blob/master/machine-learning-ex4/description.pdf)文件到本地阅读，或者安装[GitHub With Mathjax](https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima)插件在您的[Chrome]()浏览器上，即可在线浏览到完整的Latex公式。
+你的浏览器可能会显示Latex为乱码，这是由于Github Markdown不支持导致的。您选择可以下载[description.pdf](https://github.com/quinwu/AndrewNg-ML-assignment/blob/master/machine-learning-ex4/description.pdf)文件到本地阅读，或者安装[GitHub With Mathjax](https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima)插件在您的[Chrome](https://www.google.com/chrome/browser/desktop/index.html)浏览器上，即可在线浏览到完整的Latex公式。
 
 
 

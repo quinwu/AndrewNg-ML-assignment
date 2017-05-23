@@ -148,55 +148,55 @@ $$
 
 因为$a^{(1)} = x$，所以可以将 input layer 与 hidden layer同样对待
 $$
-\frac{\partial}{\partial \Theta^{(l-1)}_{i,j}}J(\Theta) = \frac {\partial J(\Theta)}{\partial a^{(l)}_i} \frac{\partial a^{(l)}_i}{\partial z^{(l)}_i}\frac{\partial z^{(l)}_i}{\partial \Theta^{(l-1)}_{i,j}} \ (l = 2,3, ..., L-1)
+\frac{\partial}{\partial \Theta^{(l-1)}\_{i,j}}J(\Theta) = \frac {\partial J(\Theta)}{\partial a^{(l)}\_i} \frac{\partial a^{(l)}\_i}{\partial z^{(l)}\_i}\frac{\partial z^{(l)}\_i}{\partial \Theta^{(l-1)}\_{i,j}} \\ (l = 2,3, ..., L-1)
 $$
 
 $$
-\frac{\partial a^{(l)}_i}{\partial z^{(l)}_i} =
-\frac{\partial g(z^{(l)}_i)}{\partial z^{(l)}_i} = 
-g(z^{(l)}_i)(1- g(z^{(l)}_i))=
-a^{(l)}_i(1- a^{(l)}_i)
+\frac{\partial a^{(l)}\_i}{\partial z^{(l)}\_i} =
+\frac{\partial g(z^{(l)}\_i)}{\partial z^{(l)}\_i} = 
+g(z^{(l)}\_i)(1- g(z^{(l)}\_i))=
+a^{(l)}\_i(1- a^{(l)}\_i)
 $$
 
 $$
-\frac{\partial z^{(l)}_i}{\partial \Theta^{(l-1)}_{i,j}} = a^{(l-1)}_j
+\frac{\partial z^{(l)}\_i}{\partial \Theta^{(l-1)}\_{i,j}} = a^{(l-1)}\_j
 $$
 
 第一部分的偏导比较麻烦，要使用chain rule。
 $$
-\dfrac{\partial J(\Theta)}{\partial a_i^{(l)}} 
-= \sum_{k=1}^{s_{l+1}} \Bigg[\dfrac{\partial J(\Theta)}{\partial a_k^{(l+1)}} \dfrac{\partial a_k^{(l+1)}}{\partial z_k^{(l+1)}} \dfrac{\partial z_k^{(l+1)}}{\partial a_i^{(l)}}\Bigg]
+\dfrac{\partial J(\Theta)}{\partial a\_i^{(l)}} 
+= \sum_{k=1}^{s\_{l+1}} \Bigg[\dfrac{\partial J(\Theta)}{\partial a\_k^{(l+1)}} \dfrac{\partial a\_k^{(l+1)}}{\partial z\_k^{(l+1)}} \dfrac{\partial z\_k^{(l+1)}}{\partial a\_i^{(l)}}\Bigg]
 $$
 
 
 $$
-\frac{\partial a^{(l+1)}_k}{\partial z^{(l+1)}_k} = a^{(l+1)}_k (1 - a^{(l+1)}_k)
+\frac{\partial a^{(l+1)}\_k}{\partial z^{(l+1)}\_k} = a^{(l+1)}\_k (1 - a^{(l+1)}\_k)
 $$
 
 $$
-\frac{\partial z^{(l+1)}_k}{\partial a^{(l)}_i} = \Theta^{(l)}_{k,i}
+\frac{\partial z^{(l+1)}\_k}{\partial a^{(l)}\_i} = \Theta^{(l)}\_{k,i}
 $$
 
 求得递推式为：
 $$
 \begin{split}
-\\ \frac{\partial J(\Theta)}{\partial a^{(l)}_i} &= 
- \sum_{k=1}^{s_{l+1}} \Bigg[\dfrac{\partial J(\Theta)}{\partial a_k^{(l+1)}} \dfrac{\partial a_k^{(l+1)}}{\partial z_k^{(l+1)}} \dfrac{\partial z_k^{(l+1)}}{\partial a_i^{(l)}}\Bigg]\\
-\\ &= \sum_{k=1}^{s_{l+1}} \Bigg[\frac{\partial J(\Theta)}{\partial a^{(l+1)}_k} 
-\frac{\partial a^{(l+1)}_k}{\partial z^{(l+1)}_k} \Theta^{(l)}_{k,i} \Bigg] \\
-\\ &= \sum_{k=1}^{s_{l+1}} \Bigg[ \frac{\partial J(\Theta)}{\partial a^{(l+1)}_k}
-a^{(l+1)}_k (1 - a^{(l+1)}_k) \Theta^{(l)}_{k,i} \Bigg]
+\\\\ \frac{\partial J(\Theta)}{\partial a^{(l)}\_i} &= 
+ \sum_{k=1}^{s\_{l+1}} \Bigg[\dfrac{\partial J(\Theta)}{\partial a\_k^{(l+1)}} \dfrac{\partial a\_k^{(l+1)}}{\partial z\_k^{(l+1)}} \dfrac{\partial z\_k^{(l+1)}}{\partial a\_i^{(l)}}\Bigg]\\\\
+\\\\ &= \sum_{k=1}^{s\_{l+1}} \Bigg[\frac{\partial J(\Theta)}{\partial a^{(l+1)}\_k} 
+\frac{\partial a^{(l+1)}\_k}{\partial z^{(l+1)}\_k} \Theta^{(l)}\_{k,i} \Bigg] \\\\
+\\\\ &= \sum_{k=1}^{s\_{l+1}} \Bigg[ \frac{\partial J(\Theta)}{\partial a^{(l+1)}\_k}
+a^{(l+1)}\_k (1 - a^{(l+1)}\_k) \Theta^{(l)}\_{k,i} \Bigg]
 \end{split}
 $$
 定义第$l$层第$i$个节点的误差为：
 $$
 \begin{split}
-\delta^{(l)}_i &= \frac{\partial}{\partial z^{(l)}_i} J(\Theta)
-\\&= \frac{\partial J(\Theta)}{\partial a^{(l)}_i} \frac{\partial a^{(l)}_i}{\partial z^{(l)}_i} \\
-\\ &=\frac{\partial J(\Theta)}{\partial a^{(l)}_i} a^{(l)}_i (1 - a^{(l)}_i) \\
-\\ &= \sum_{k=1}^{s_{l+1}} \Bigg[\frac{\partial J(\Theta)}{\partial a^{(l+1)}_k} 
-\frac{\partial a^{(l+1)}_k}{\partial z^{(l+1)}_k} \Theta^{(l)}_{k,i} \Bigg]  a^{(l)}_i (1 - a^{(l)}_i) \\
-\\ &= \sum_{k=1}^{s_{l+1}} \Bigg[\delta^{(l+1)}_k \Theta^{(l)}_{k,i} \Bigg] a^{(l)}_i (1 - a^{(l)}_i) \
+\delta^{(l)}\_i &= \frac{\partial}{\partial z^{(l)}\_i} J(\Theta)
+\\\\&= \frac{\partial J(\Theta)}{\partial a^{(l)}\_i} \frac{\partial a^{(l)}\_i}{\partial z^{(l)}\_i} \\\\
+\\\\ &=\frac{\partial J(\Theta)}{\partial a^{(l)}\_i} a^{(l)}\_i (1 - a^{(l)}\_i) \\\\
+\\\\ &= \sum_{k=1}^{s\_{l+1}} \Bigg[\frac{\partial J(\Theta)}{\partial a^{(l+1)}\_k} 
+\frac{\partial a^{(l+1)}\_k}{\partial z^{(l+1)}\_k} \Theta^{(l)}\_{k,i} \Bigg]  a^{(l)}\_i (1 - a^{(l)}\_i) \\\\
+\\\\ &= \sum_{k=1}^{s\_{l+1}} \Bigg[\delta^{(l+1)}\_k \Theta^{(l)}\_{k,i} \Bigg] a^{(l)}\_i (1 - a^{(l)}\_i) 
 \end{split}
 $$
 
@@ -213,31 +213,31 @@ $$
 最终代价函数的偏导数为
 $$
 \begin{split}
-\frac {\partial}{\partial \Theta^{(l-1)}_{i,j}} J(\Theta) &= \frac {\partial J(\Theta)}{\partial a^{(l)}_i}\frac{\partial a^{(l)}_i}{\partial z^{(l)}_i} \frac{\partial z^{(l)}_i}{\partial \Theta^{(l-1)}_{i,j}} \\
-\\&= \frac {\partial J(\Theta)}{\partial z^{(l)}_i} \frac{\partial z^{(l)}_i}{\partial \Theta^{(l-1)}_{i,j}} \\
-\\ &= \delta^{(l)}_i \frac{\partial z^{(l)}_i}{\partial \Theta^{(l-1)}_{i,j}} \\
-\\ &= \delta^{(l)}_i  a^{(l-1)}_j
+\frac {\partial}{\partial \Theta^{(l-1)}\_{i,j}} J(\Theta) &= \frac {\partial J(\Theta)}{\partial a^{(l)}\_i}\frac{\partial a^{(l)}\_i}{\partial z^{(l)}\_i} \frac{\partial z^{(l)}\_i}{\partial \Theta^{(l-1)}\_{i,j}} \\\\
+\\\\&= \frac {\partial J(\Theta)}{\partial z^{(l)}\_i} \frac{\partial z^{(l)}\_i}{\partial \Theta^{(l-1)}\_{i,j}} \\\\
+\\\\ &= \delta^{(l)}\_i \frac{\partial z^{(l)}\_i}{\partial \Theta^{(l-1)}\_{i,j}} \\\\
+\\\\ &= \delta^{(l)}\_i  a^{(l-1)}\_j
 \end{split}
 $$
 ###### 总结
 
 * 输出层的误差 $\delta^{(L)}_i$
   $$
-  \delta^{(L)}_i = a^{(L)}_i - y_i
+  \delta^{(L)}\_i = a^{(L)}\_i - y\_i
   $$
 
 * 隐层误差 $\delta^{(l)}_i$
   $$
-  \delta^{(l)}_i =\sum_{k=1}^{s_{l+1}} \Bigg[\delta^{(l+1)}_k \Theta^{(l)}_{k,i} \Bigg] a^{(l)}_i (1 - a^{(l)}_i)
+  \delta^{(l)}\_i =\sum_{k=1}^{s\_{l+1}} \Bigg[\delta^{(l+1)}\_k \Theta^{(l)}\_{k,i} \Bigg] a^{(l)}\_i (1 - a^{(l)}\_i)
   $$
 
-* 代价函数偏导项 $\frac {\partial}{\partial \Theta^{(l-1)}_{i,j}} J(\Theta)$
+* 代价函数偏导项 $\frac {\partial}{\partial \Theta^{(l-1)}\_{i,j}} J(\Theta)$
   $$
-  \frac {\partial}{\partial \Theta^{(l-1)}_{i,j}} J(\Theta) = \delta^{(l)}_i a^{(l-1)}_j
+  \frac {\partial}{\partial \Theta^{(l-1)}\_{i,j}} J(\Theta) = \delta^{(l)}\_i a^{(l-1)}\_j
   $$
   即
   $$
-  \frac {\partial}{\partial \Theta^{(l)}_{i,j}} J(\Theta) = \delta^{(l+1)}_i a^{(l)}_j
+  \frac {\partial}{\partial \Theta^{(l)}\_{i,j}} J(\Theta) = \delta^{(l+1)}\_i a^{(l)}\_j
   $$
   ​
 
@@ -247,18 +247,18 @@ $$
 $$
 \delta^{(l)} = \frac {\partial}{ \partial z^{(l)}} J(\Theta)
 $$
-$\delta^{(l)}_j$ 表示第$l$层第$j$个节点的误差。为了求出偏导项$\frac{\partial}{\partial \Theta^{(l)} _{ij}} J(\Theta)$，我们首先要求出每一层的$\delta$（不包括第一层，第一层是输入层，不存在误差），对于输出层第四层 
+$\delta^{(l)}_j$ 表示第$l$层第$j$个节点的误差。为了求出偏导项$\frac{\partial}{\partial \Theta^{(l)} \_{ij}} J(\Theta)$，我们首先要求出每一层的$\delta$（不包括第一层，第一层是输入层，不存在误差），对于输出层第四层 
 
 
 $$
 \begin{align}
-\delta_i^{(4)} & = \frac{\partial}{\partial z_i^{(4)}}J(\Theta) \\
- \\& = \frac{\partial J(\Theta)}{\partial a_i^{(4)}}\frac{\partial a_i^{(4)}}{\partial z_i^{(4)}} \\
- \\& = -\frac{\partial}{\partial a_i^{(4)}}\sum_{k=1}^K\left[y_kloga_k^{(4)}+(1-y_k)log(1-a_k^{(4)})\right]g’(z_i^{(4)})  \\ 
- \\& = -\frac{\partial}{\partial a_i^{(4)}}\left[y_iloga_i^{(4)}+(1-y_i)log(1-a_i^{(4)})\right]g(z_i^{(4)})(1-g(z_i^{(4)}))  \\
-\\ & = \left(\frac{1-y_i}{1-a_i^{(4)}}-\frac{y_i}{a_i^{(4)}}\right)a_i^{(4)}(1-a_i^{(4)}) \\ 
-\\ & = (1-y_i)a_i^{(4)} - y_i(1-a_i^{(4)}) \\ 
-\\ & = a_i^{(4)} - y_i \\ 
+\delta_i^{(4)} & = \frac{\partial}{\partial z\_i^{(4)}}J(\Theta) \\\\
+ \\\\& = \frac{\partial J(\Theta)}{\partial a\_i^{(4)}}\frac{\partial a\_i^{(4)}}{\partial z\_i^{(4)}} \\\\
+ \\\\& = -\frac{\partial}{\partial a\_i^{(4)}}\sum\_{k=1}^K\left[y\_kloga\_k^{(4)}+(1-y\_k)log(1-a_k^{(4)})\right]g’(z\_i^{(4)})  \\\\ 
+ \\\\& = -\frac{\partial}{\partial a\_i^{(4)}}\left[y\_iloga\_i^{(4)}+(1-y\_i)log(1-a\_i^{(4)})\right]g(z\_i^{(4)})(1-g(z_i^{(4)}))  \\\\
+\\\\ & = \left(\frac{1-y\_i}{1-a\_i^{(4)}}-\frac{y\_i}{a\_i^{(4)}}\right)a\_i^{(4)}(1-a\_i^{(4)}) \\\\ 
+\\\\ & = (1-y\_i)a\_i^{(4)} - y\_i(1-a\_i^{(4)}) \\\\ 
+\\\\ & = a\_i^{(4)} - y\_i \\\\ 
 \end{align}
 $$
 

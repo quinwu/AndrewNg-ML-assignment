@@ -226,12 +226,12 @@ $$
   \delta^{(L)}\_i = a^{(L)}\_i - y\_i
   $$
 
-* 隐层误差 $\delta^{(l)}_i$
+* 隐层误差 $\delta^{(l)}\_i$
   $$
-  \delta^{(l)}\_i =\sum_{k=1}^{s\_{l+1}} \Bigg[\delta^{(l+1)}\_k \Theta^{(l)}\_{k,i} \Bigg] a^{(l)}\_i (1 - a^{(l)}\_i)
+  \delta^{(l)}\_i =\sum\_{k=1}^{s\_{l+1}} \Bigg[\delta^{(l+1)}\_k \Theta^{(l)}\_{k,i} \Bigg] a^{(l)}\_i (1 - a^{(l)}\_i)
   $$
 
-* 代价函数偏导项 $\frac {\partial}{\partial \Theta^{(l-1)}\_{i,j}} J(\Theta)$
+* 代价函数偏导项 $\frac {\partial}{\partial \Theta^{(l-1)}\_{i,j}} J(\Theta)​$
   $$
   \frac {\partial}{\partial \Theta^{(l-1)}\_{i,j}} J(\Theta) = \delta^{(l)}\_i a^{(l-1)}\_j
   $$
@@ -264,10 +264,10 @@ $$
 
 $$
 \begin{split}
-\delta_i^{(l)} & = \frac{\partial}{\partial z_i^{(l)}}J(\Theta) \\ 
-\\ & = \sum_{k=1}^{S_{l+1}}\frac{\partial J(\Theta)}{\partial z_k^{(l+1)}}\frac{\partial z_k^{(l+1)}}{\partial a_i^{(l)}}\frac{\partial a_i^{(l)}}{\partial z_i^{(l)}} \\
-\\ & = \sum_{k=1}^{S_{l+1}}\delta_k^{(l+1)}\Theta_{ki}^{(l)} g’(z_i^{(l)}) \\ 
-\\ & = g’(z_i^{(l)})\sum_{k=1}^{S_{l+1}}\delta_k^{(l+1)}\Theta_{ki}^{(l)}
+\delta\_i^{(l)} & = \frac{\partial}{\partial z\_i^{(l)}}J(\Theta) \\\\ 
+\\\\ & = \sum_{k=1}^{S\_{l+1}}\frac{\partial J(\Theta)}{\partial z\_k^{(l+1)}}\frac{\partial z\_k^{(l+1)}}{\partial a\_i^{(l)}}\frac{\partial a\_i^{(l)}}{\partial z\_i^{(l)}} \\\\
+\\ & = \sum_{k=1}^{S\_{l+1}}\delta\_k^{(l+1)}\Theta\_{ki}^{(l)} g’(z_i^{(l)}) \\\\ 
+\\ & = g’(z\_i^{(l)})\sum_{k=1}^{S\_{l+1}}\delta\_k^{(l+1)}\Theta\_{ki}^{(l)}
 \end{split}
 $$
 

@@ -1,3 +1,13 @@
+### 说明
+
+你的浏览器可能会显示Latex为乱码，这是由于Github Markdown不支持导致的。您可以下载[ex4.md]()文件在本地阅读，或者安装[GitHub With Mathjax](https://chrome.google.com/webstore/detail/github-with-mathjax/ioemnmodlmafdkllaclgeombjnmnbima)在您的[Chrome]()浏览器上，可以获得在线的完整观感。
+
+
+
+
+
+
+
 ##### logistic regression cost function
 
 $$

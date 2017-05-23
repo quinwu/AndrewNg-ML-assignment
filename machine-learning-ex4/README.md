@@ -132,7 +132,7 @@ $$
 $$
 
 $$
-\frac{\partial z^{(L)}_i}{\partial \Theta^{(L-1)}_{i,j}} = a^{(L-1)}_j
+\frac{\partial z^{(L)}\_i}{\partial \Theta^{(L-1)}\_{i,j}} = a^{(L-1)}_j
 $$
 
 综上

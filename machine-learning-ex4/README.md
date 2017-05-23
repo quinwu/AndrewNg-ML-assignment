@@ -202,10 +202,10 @@ $$
 
 $$
 \begin{split}
-\delta^{(L)}_i  &=  \frac{\partial J(\Theta)}{\partial z^{(L)}_i} \\
-\\ &= \frac {\partial J(\Theta)}{\partial a^{(L)}_i} \frac{\partial a^{(L)}_i}{\partial z^{(L)}_i} \\
-\\ &=\frac{a^{(L)}_i -y_i}{(1-a^{(L)}_i)a^{(L)}_i} a^{(L)}_i(1- a^{(L)}_i)  \\
-\\ &= a^{(L)}_i - y_i
+\delta^{(L)}_i  &=  \frac{\partial J(\Theta)}{\partial z^{(L)}\_i} \\\\
+\\\\ &= \frac {\partial J(\Theta)}{\partial a^{(L)}\_i} \frac{\partial a^{(L)}\_i}{\partial z^{(L)}\_i} \\\\
+\\\\&=\frac{a^{(L)}\_i -y\_i}{(1-a^{(L)}_i)a^{(L)}\_i} a^{(L)}\_i(1- a^{(L)}\_i)  \\\\
+\\\\&= a^{(L)}\_i - y\_i
 \end{split}
 $$
 

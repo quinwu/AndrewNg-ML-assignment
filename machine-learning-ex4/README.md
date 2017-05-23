@@ -7,7 +7,7 @@ $$
 ##### neural network
 
 $$
-J(\Theta) = -\frac{1}{m}\Bigg[\sum_{i=1}^m\sum_{k=1}^Ky_k^{(i)} \log(h_\Theta(x^{(i)}))_k + (1- y_k^{(i)})\log(1-(h_\Theta(x^{(i)}))_k) \Bigg]
+J(\Theta) = -\frac{1}{m}\Bigg[\sum_{i=1}^m\sum_{k=1}^Ky_k^{(i)} \log(h_\Theta(x^{(i)}))_{k} + (1- y_k^{(i)})\log(1-(h_\Theta(x^{(i)}))_k) \Bigg]
 $$
 
 ##### logistic regression cost function regularization

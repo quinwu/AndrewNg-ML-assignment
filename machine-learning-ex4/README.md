@@ -104,7 +104,7 @@ z^{(l)} = \Theta^{(l-1)}a^{(l-1)}
 $$
 
 $$
-\frac{\partial}{\partial \Theta^{(L-1)}\_{i,j}}J(\Theta) = \frac {\partial J(\Theta)}{\partial h_\theta(x)_i} \frac{\partial h_\theta(x)_i}{\partial z^{(L)}_i} \frac{\partial z^{(L)}_i}{\partial \Theta^{(L-1)}_{i,j}} = \frac {\partial J(\Theta)}{\partial a^{(L)}_i}\frac{\partial a^{(L)}_i}{\partial z^{(L)}_i} \frac{\partial z^{(L)}_i}{\partial \Theta^{(L-1)}_{i,j}}
+\frac{\partial}{\partial \Theta^{(L-1)}\_{i,j}}J(\Theta) = \frac {\partial J(\Theta)}{\partial h_\theta(x)\_i} \frac{\partial h_\theta(x)\_i}{\partial z^{(L)}\_i} \frac{\partial z^{(L)}\_i}{\partial \Theta^{(L-1)}\_{i,j}} = \frac {\partial J(\Theta)}{\partial a^{(L)}\_i}\frac{\partial a^{(L)}\_i}{\partial z^{(L)}\_i} \frac{\partial z^{(L)}\_i}{\partial \Theta^{(L-1)}\_{i,j}}
 $$
 
 $$

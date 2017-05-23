@@ -138,9 +138,9 @@ $$
 综上
 $$
 \begin{split}
-\\ \frac{\partial}{\partial \Theta^{(L-1)}_{i,j}}J(\Theta) &= \frac {\partial J(\Theta)}{\partial a^{(L)}_i}\frac{\partial a^{(L)}_i}{\partial z^{(L)}_i} \frac{\partial z^{(L)}_i}{\partial \Theta^{(L-1)}_{i,j}} \\
-\\ &=\frac{a^{(L)}_i -y_i}{(1-a^{(L)}_i)a^{(L)}_i} a^{(L)}_i(1- a^{(L)}_i)  a^{(L-1)}_j \\
-\\ &= (a^{(L)}_i - y_i) a_j^{(L-1)}
+ \frac{\partial}{\partial \Theta^{(L-1)}\_{i,j}}J(\Theta) &= \frac {\partial J(\Theta)}{\partial a^{(L)}\_i}\frac{\partial a^{(L)}\_i}{\partial z^{(L)}\_i} \frac{\partial z^{(L)}\_i}{\partial \Theta^{(L-1)}\_{i,j}} \\\\
+\\\\ &=\frac{a^{(L)}\_i -y\_i}{(1-a^{(L)}\_i)a^{(L)}\_i} a^{(L)}\_i(1- a^{(L)}_i)  a^{(L-1)}_j \\
+\\\\ &= (a^{(L)}\_i - y\_i) a_j^{(L-1)}
 \end{split}
 $$
 

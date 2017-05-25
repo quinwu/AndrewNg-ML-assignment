@@ -12,3 +12,5 @@ Andrew Ng Machine learning programming assignment (Coursera) by Quin Wu
 
 - 2017-05-24 18:09  [Machine Learning exercise-5](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex5)
 
+- 2017-05-25 21:31  [Machine Learning exercise-6](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex6)
+

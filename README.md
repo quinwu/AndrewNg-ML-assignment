@@ -1,5 +1,5 @@
 # AndrewNg-ML-assignment
-This is Andrew Ng Machine learning programming assignment (Coursera) by Quin Wu,using MATLAB/OCTAVE to program.
+This is Andrew Ng Machine learning programming assignment ([Coursera](https://www.coursera.org/learn/machine-learning)) by Quin Wu,using MATLAB/OCTAVE to program.
 
 
 - 2017-04-27 22:27  [Linear Regression](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex1)

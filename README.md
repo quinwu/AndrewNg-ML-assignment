@@ -1,16 +1,20 @@
 # AndrewNg-ML-assignment
-Andrew Ng Machine learning programming assignment (Coursera) by Quin Wu
+This is Andrew Ng Machine learning programming assignment (Coursera) by Quin Wu,using MATLAB/OCTAVE to program.
 
 
-- 2017-04-27 22:27  [Machine Learning exercise-1](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex1)
+- 2017-04-27 22:27  [Linear Regression](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex1)
 
-- 2017-05-03 16:44  [Machine Learning exercise-2](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex2)
+- 2017-05-03 16:44  [Logistic Regression](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex2)
 
-- 2017-05-08 21:31  [Machine Learning exercise-3](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex3)
+- 2017-05-08 21:31  [Muti-class Classification and Neural Networks](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex3)
 
-- 2017-05-15 22:52  [Machine Learning exercise-4](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex4)
+- 2017-05-15 22:52  [Neural Network Learning](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex4)
 
-- 2017-05-24 18:09  [Machine Learning exercise-5](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex5)
+- 2017-05-24 18:09  [Regularized Linear Regression and Bias/Variance](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex5)
 
-- 2017-05-25 21:31  [Machine Learning exercise-6](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex6)
+- 2017-05-25 21:31  [Support Vector Machines](https://github.com/Aemonwk/AndrewNg-ML-exercise/tree/master/machine-learning-ex6)
 
+
+
+
+I will do my best to explain this course assignment,including some chapter README.if you have any questions,please to [contact me](mailto:wukuan1995@outlook.com). ;)

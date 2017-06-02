@@ -17,4 +17,4 @@ This is Andrew Ng Machine learning programming assignment ([Coursera](https://ww
 
 
 
-I will do my best to explain this course assignment,including some chapter README.if you have any questions,please to [contact me](mailto:wukuan1995@outlook.com). ;)
+I will do my best to explain this course assignment,including some chapter README.if you have any questions,please to [contact me](mailto:wukuan1995@gmail.com). ;)
